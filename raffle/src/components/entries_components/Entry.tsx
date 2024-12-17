@@ -6,11 +6,12 @@ interface Props {
   num: number;
 }
 function Entry(props: Props) {
+  let padded = props.num.toString().padStart(4, "0");
   return (
     <>
-      <div className="box-entry">
+      <div className="box-entry mt-1">
         <span className="icon-holder spacer">
-          #{props.num} &nbsp;
+          #{padded} &nbsp;
           <i className="bi bi-ticket-perforated-fill fs-1"></i>
           &nbsp;
         </span>

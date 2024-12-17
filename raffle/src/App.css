@@ -5,3 +5,16 @@
 #title {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
+
+#scroll {
+  max-height: 40vh;
+  height: 40vh;
+  width: 80vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  margin-bottom: 50px;
+}
+
+#scroll::-webkit-scrollbar{
+  display: none;
+}

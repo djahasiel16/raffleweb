@@ -1,14 +1,25 @@
 import "./css/Digits.css";
-function Digits() {
+
+interface Props {
+  num: number;
+}
+function Digits(props: Props) {
+  const padded = props.num.toString().padStart(4, "0");
+  const digits = padded.split("");
   return (
     <>
       <div className="d-flex">
-        <div className="digit-box">0</div>
-        <div className="digit-box">0</div>
-        <div className="digit-box">0</div>
-        <div className="digit-box">0</div>
-        <div className="digit-box">0</div>
-        <div className="digit-box">0</div>
+        <div className="digit-box" id="d-1">
+          #
+        </div>
+        <div className="digit-box" id="d-1">
+          #
+        </div>
+        {digits.map((digit) => (
+          <div className="digit-box" id="d-1">
+            {digit}
+          </div>
+        ))}
       </div>
     </>
   );
