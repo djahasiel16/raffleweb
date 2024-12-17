@@ -1,0 +1,16 @@
+.digit-box {
+    /* width:75px;
+    height: 100px; */
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.734);
+    border-radius: 12px;
+    text-align: center;
+    align-items: center;
+    margin: 3px 10px 3px 10px;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 100px;
+    padding: 10px 20px 10px 20px;
+}
