@@ -3,7 +3,7 @@ import "../App.css";
 
 interface Props {
   entries: number[];
-  names: { [key:number]: string }
+  names: { [key: number]: string };
 }
 
 function Scroll(props: Props) {
@@ -14,11 +14,16 @@ function Scroll(props: Props) {
       ) : (
         false
       )}
-      <div className="row" id="scroll">
-        <div className="col">
+      <div id="scroll">
+        <div>
           <div>
-            {props.entries.map((entry:number) => (
-              <Entry key={entry} name={props.names[entry] ? props.names[entry]:'Not Sold' } num={entry} />
+            {props.entries.map((entry: number, index) => (
+              <Entry
+                key={entry}
+                name={props.names[entry] ? props.names[entry] : "Not Sold"}
+                num={entry}
+                index={index}
+              />
             ))}
           </div>
         </div>

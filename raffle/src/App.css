@@ -7,14 +7,61 @@
 }
 
 #scroll {
+  display: flex;
+  justify-content: center;
   max-height: 40vh;
   height: 40vh;
-  width: 80vh;
+  width: 130vh;
   overflow-y: auto;
   scroll-behavior: smooth;
   margin-bottom: 50px;
 }
 
-/* #scroll::-webkit-scrollbar{
+#scroll::-webkit-scrollbar{
   display: none;
-} */
+}
+
+.bg-theme {
+  background-color: rgb(65,86,132);
+}
+
+body {
+  color: rgb(22,42,114);
+}
+
+.btn-primary {
+  background-color: rgb(255, 255, 255);
+  border: 0px;
+  color: rgb(65,86,132);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.734);
+  transition: 1s;
+}
+
+.btn-primary:hover {
+  background-color: rgb(64, 101, 248);
+  color: rgb(255, 255, 255);
+  border: 0px;
+  transition: 1s;
+  transform: scale(1.1,1.1);
+}
+
+.btn-secondary {
+  background-color: rgb(255, 255, 255);
+  border: 0px;
+  color: rgb(132, 65, 65);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.734);
+  transition: 1s;
+}
+
+.btn-secondary:hover {
+  background-color: rgb(210, 42, 42);
+  color: rgb(255, 255, 255);
+  border: 0px;
+  transition: 1s;
+  transform: scale(1.1,1.1);
+}
+
+.winner-box {
+  transition: 1s;
+  /* transform: scale(1.1,1.1); */
+}

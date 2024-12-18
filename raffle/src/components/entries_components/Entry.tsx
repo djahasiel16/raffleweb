@@ -6,35 +6,47 @@ import { useState } from "react";
 interface Props {
   name: string;
   num: number;
+  index: number;
 }
 function Entry(props: Props) {
   let padded = props.num.toString().padStart(4, "0");
   const [blur, setBlur] = useState(10);
-  
+
   useEffect(() => {
-      const interval = setInterval(() => {
-        setBlur((prev) => Math.max(prev - 1, 0));
-      }, 1000);
-  
-      const timeout = setTimeout(() => {
-        clearInterval(interval);
-      }, 10 * 1000);
-  
-      return () => {
-        clearInterval(interval);
-        clearTimeout(timeout);
-      };
-    }, []);
+    const interval = setInterval(() => {
+      setBlur((prev) => Math.max(prev - 1, 0));
+    }, 1000);
+
+    const timeout = setTimeout(() => {
+      clearInterval(interval);
+    }, 10 * 1000);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timeout);
+    };
+  }, []);
 
   return (
     <>
-      <div className="box-entry mt-1">
+      <div
+        className={
+          props.index == 0 ? "box-entry mt-1 winner-box" : "box-entry mt-1"
+        }
+      >
         <span className="icon-holder spacer">
           #{padded} &nbsp;
           <i className="bi bi-ticket-perforated-fill fs-1"></i>
           &nbsp;
         </span>
-        <span className="spacer" id="name" style={{filter:`blur(${blur}px)`, transition:"filter 1s ease-out",}}>
+        <span
+          className="spacer winner"
+          id="name"
+          style={{
+            filter: `blur(${blur}px)`,
+            transition: "filter 1s ease-out",
+          }}
+        >
           {props.name}
         </span>
       </div>

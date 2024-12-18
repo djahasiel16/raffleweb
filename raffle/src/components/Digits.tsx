@@ -3,6 +3,7 @@ import AnimatedNumber from "./AnimatedNumber";
 
 interface Props {
   num: number;
+  duration: number;
 }
 function Digits(props: Props) {
   const padded = props.num.toString().padStart(4, "0");
@@ -18,7 +19,10 @@ function Digits(props: Props) {
         </div>
         {digits.map((digit) => (
           <div className="digit-box" id="d-1">
-            <AnimatedNumber targetNumber={parseInt(digit,10)} duration={3} />
+            <AnimatedNumber
+              targetNumber={parseInt(digit, 10)}
+              duration={props.duration}
+            />
           </div>
         ))}
       </div>
