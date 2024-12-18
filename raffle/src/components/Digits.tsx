@@ -1,4 +1,5 @@
 import "./css/Digits.css";
+import AnimatedNumber from "./AnimatedNumber";
 
 interface Props {
   num: number;
@@ -17,7 +18,7 @@ function Digits(props: Props) {
         </div>
         {digits.map((digit) => (
           <div className="digit-box" id="d-1">
-            {digit}
+            <AnimatedNumber targetNumber={parseInt(digit,10)} duration={3} />
           </div>
         ))}
       </div>

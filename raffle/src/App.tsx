@@ -1,7 +1,8 @@
 import "bootstrap/dist/css/bootstrap.css";
-// import Sidewindow from "./components/Sidewindow";
 import Digits from "./components/Digits";
 import Scroll from "./components/Scroll";
+import CSV from "./components/CSV";
+
 import "./App.css";
 import { useState } from "react";
 
@@ -14,6 +15,10 @@ function getRandomInt(min: number, max: number): number {
 function App() {
   const [winningNumber, setWinningNumber] = useState(0);
   const [winners, setWinners] = useState<number[]>([]);
+  const names = {
+    100:'Jahasiel',
+    234:'James'
+  }
   return (
     <>
       <div className="d-flex flex-row justify-content-center bg-secondary mx-3 mt-3 p-2 rounded container">
@@ -21,25 +26,27 @@ function App() {
           <h3 className="text-white fs-1" id="title">
             THANKS GIVING RAFFLE DRAW
           </h3>
-          <button
-            className="btn btn-dark text-white px-5 fs-4 m-3 fw-medium"
+          
+          <div className="p-2 d-flex">
+            <Digits num={winningNumber} />
+            <button
+            className="btn btn-dark text-white px-4 fs-4 m-1 fw-medium shadow"
             onClick={() => {
               setWinningNumber(getRandomInt(1, 500));
               winningNumber
-                ? setWinners((winners) => [...winners, winningNumber])
+                ? setWinners((winners) => [winningNumber,...winners])
                 : false;
             }}
           >
             START
           </button>
-          <div className="p-2">
-            <Digits num={winningNumber} />
           </div>
           <div className="p-2">
-            <Scroll entries={winners} />
+            <Scroll names={names} entries={winners} />
           </div>
         </div>
       </div>
+      <CSV />
     </>
   );
 }

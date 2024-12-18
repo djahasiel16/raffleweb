@@ -25,10 +25,10 @@
 
 #name {
     filter: blur(5px);
-    transition: 3s;
+    transition: 1s;
 }
 
-#name:hover {
+/* #name:hover {
     transition: 3s;
     filter: blur(0px);
-}
+} */
